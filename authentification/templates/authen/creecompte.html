@@ -1,0 +1,31 @@
+{% extends 'authen/base.html' %}
+
+
+{% block content %}
+<h1>creer votre compte ici</h1>
+{% for message in messages %}
+{{message}}
+{% endfor %}
+<form action="{% url 'authentification:creecompte' %}" method="POST"> 
+    {% csrf_token %}
+    <label for="username">username</label>
+    <input type="text" name="username" id="username" required placeholder="enter your username"><br><br>
+
+    <label for="surname">surname</label>
+    <input type="text" name="surname" id="surname" required placeholder="enter your surname"><br><br>
+
+    <label for="email">email</label>
+    <input type="email" name="email" id="email" required placeholder="enter your email"><br><br>
+
+    <label for="password">password</label>
+    <input type="password" name="password" id="password" required placeholder="enter your password"><br><br>
+
+    <label for="passwordconfim">passwordconfim</label>
+    <input type="password" name="passwordconfim" id="passwordconfim" required placeholder="confirme your password"><br><br>
+    <input type="submit" value="creer">
+</form> 
+
+
+
+
+{% endblock %}

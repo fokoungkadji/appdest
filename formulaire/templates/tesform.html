@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block formulaire%}
+
+{% for field in form %}
+<div class="fieldWrapper">
+    {{ field.errors }}
+    {{ field.label_tag }} {{ field }}
+</div>
+{% endfor %}
+        
+{% endblock %}

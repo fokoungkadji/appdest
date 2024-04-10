@@ -1,0 +1,15 @@
+{% extends 'authen/base.html' %}
+
+
+{% block content %}
+<h1>systenme d'authentification fais par bezout</h1>
+{% if user.is_authenticated %}
+    <h4>bonjour  bienvenu sur notre site le millionaire</h4>
+    <button type="submit"><a href="{% url 'authentification:deconnexion' %}">deconnexion</a></button>
+{% else %}
+    <button type="submit"><a href="{% url 'authentification:creecompte' %}">creer un compte</a></button>
+    <button type="submit"><a href="{% url 'authentification:connection' %}">se connecter</a></button>
+{% endif %}
+
+
+{% endblock %}

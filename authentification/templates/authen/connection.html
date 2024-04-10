@@ -1,0 +1,18 @@
+{% extends 'authen/base.html' %}
+
+
+{% block content %}
+    <h1>connectez vous ici</h1>
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    <form action="{% url 'authentification:connection' %}" method="post"> 
+        {% csrf_token %}
+        <label for="username">username</label>
+        <input type="text" name="username" id="username" required placeholder="enter your username"><br><br>
+
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" required placeholder="enter your password"><br><br>
+        <input type="submit" value="connecter">
+    </form>
+{% endblock %}  
