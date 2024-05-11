@@ -49,7 +49,7 @@ def creecompte(request):
         new.save()
         messages.success(request, 'vous venez de creer votre compte')
         sujet = 'mail de confirmation'
-        message = "bienvenu mr" + new.username + " "+ " \n sur sur notre site votre compte a ete creer avec succes\n\n"
+        message = "bienvenu mr " + new.username + " "+ " \n sur sur notre site votre compte a ete creer avec succes\n\n"
         from_mail = settings.EMAIL_HOST_USER
         to_email =[new.email]
         send_mail(sujet, message, from_mail, to_email, fail_silently = False)
